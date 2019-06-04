@@ -68,5 +68,27 @@ namespace GUI
 		~Scroll();
 	};
 
+	class NumberBox
+	{
+		std::string s;
+		sf::Texture tex;
+		sf::IntRect rect;
+		sf::Vector2f pos;
+		ButtonState state;
+		sf::Sprite* current;
+		std::string text;
+		bool pressed[10] = { false };
+		bool bpressed = false;
+		sf::Text text_;
+		sf::Font font;
+		int size;
+	public:
+		NumberBox() {};
+		NumberBox(std::string, sf::Vector2f, std::string, int);
+		std::string Update(sf::RenderWindow*);
+		void Draw(sf::RenderWindow*);
+		~NumberBox();
+	};
+
 }
 
